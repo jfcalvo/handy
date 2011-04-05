@@ -1,0 +1,23 @@
+To compile handy:
+
+    1. handy uses a small logging library, you must compile it first:
+        
+        handydir$: cd logging
+        handydir$: make
+
+    2. If the logging library has been compiled you can now compile handy:
+
+        handydir$: cd handy
+        handydir$: make
+
+       This will compile all the necesaries object files and a dinamic shared
+       library called libhandy.so, you must link your code with this library
+       to use handy.
+
+
+The process is the same for Linux and MacOs.
+
+That's it!
+
+José Francisco Calvo Moreno <josefranciscocalvo@gmail.com>
+

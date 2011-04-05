@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HandyBox</class>
+ <widget class="QMainWindow" name="HandyBox">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>380</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>380</width>
+    <height>530</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>380</width>
+    <height>530</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>380</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_New_Collection"/>
+    <addaction name="action_Load_Collection"/>
+    <addaction name="actionSave_Collection"/>
+    <addaction name="actionSave_Collection_As"/>
+    <addaction name="separator"/>
+    <addaction name="action_Quit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout_HandyBox"/>
+   </widget>
+   <widget class="QMenu" name="menuAllographs">
+    <property name="title">
+     <string>&amp;Allographs</string>
+    </property>
+    <addaction name="actionNew_Allograph"/>
+    <addaction name="actionLoad_Allograph"/>
+    <addaction name="actionSave_Allograph"/>
+    <addaction name="separator"/>
+    <addaction name="actionSet_Symbol"/>
+    <addaction name="actionAdd_Allograph"/>
+    <addaction name="separator"/>
+    <addaction name="actionRecognize_Allograph"/>
+    <addaction name="separator"/>
+    <addaction name="actionNormalize_Repeated_Points"/>
+    <addaction name="actionNormalize_number_of_points"/>
+    <addaction name="actionNormalize_Slant"/>
+    <addaction name="actionNormalize_Position"/>
+    <addaction name="actionNormalize_Size"/>
+    <addaction name="actionNormalize_All"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menuAllographs"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Allograph"/>
+   <addaction name="actionLoad_Allograph"/>
+   <addaction name="actionSave_Allograph"/>
+   <addaction name="actionAdd_Allograph"/>
+   <addaction name="actionSet_Symbol"/>
+   <addaction name="actionNormalize_Size"/>
+   <addaction name="actionNormalize_All"/>
+   <addaction name="actionRecognize_Allograph"/>
+  </widget>
+  <widget class="QDockWidget" name="allographsDock">
+   <property name="minimumSize">
+    <size>
+     <width>380</width>
+     <height>70</height>
+    </size>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="allographsDockContents">
+    <widget class="QComboBox" name="allographsComboBox">
+     <property name="geometry">
+      <rect>
+       <x>158</x>
+       <y>0</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="allographsLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Collection Allographs:</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <action name="action_New_Collection">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/folder_new.png</normaloff>:/images/resources/icons/folder_new.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New Collection</string>
+   </property>
+  </action>
+  <action name="action_Load_Collection">
+   <property name="text">
+    <string>&amp;Load Collection</string>
+   </property>
+  </action>
+  <action name="actionSave_Collection">
+   <property name="text">
+    <string>&amp;Save Collection</string>
+   </property>
+  </action>
+  <action name="actionSave_Collection_As">
+   <property name="text">
+    <string>Save Collection As</string>
+   </property>
+  </action>
+  <action name="action_Quit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionAdd_Allograph">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/edit_add.png</normaloff>:/images/resources/icons/edit_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Allograph</string>
+   </property>
+  </action>
+  <action name="actionDelete_Allograph">
+   <property name="text">
+    <string>Delete Allograph</string>
+   </property>
+  </action>
+  <action name="actionRecognize_Allograph">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/apply.png</normaloff>:/images/resources/icons/apply.png</iconset>
+   </property>
+   <property name="text">
+    <string>Recognize Allograph</string>
+   </property>
+  </action>
+  <action name="actionNew_Allograph">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/filenew.png</normaloff>:/images/resources/icons/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Allograph</string>
+   </property>
+  </action>
+  <action name="actionNormalize_Size">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/edit.png</normaloff>:/images/resources/icons/edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Normalize Size</string>
+   </property>
+  </action>
+  <action name="actionNormalize_Position">
+   <property name="text">
+    <string>Normalize Position</string>
+   </property>
+  </action>
+  <action name="actionNormalize_Repeated_Points">
+   <property name="text">
+    <string>Normalize Repeated Points</string>
+   </property>
+  </action>
+  <action name="actionNormalize_All">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/wizard.png</normaloff>:/images/resources/icons/wizard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Normalize All</string>
+   </property>
+  </action>
+  <action name="actionAbout_HandyBox">
+   <property name="text">
+    <string>About HandyBox</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionNormalize_number_of_points">
+   <property name="text">
+    <string>Normalize Number of Points</string>
+   </property>
+  </action>
+  <action name="actionLoad_Allograph">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/fileopen.png</normaloff>:/images/resources/icons/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load Allograph</string>
+   </property>
+  </action>
+  <action name="actionSave_Allograph">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/filesave.png</normaloff>:/images/resources/icons/filesave.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Allograph</string>
+   </property>
+  </action>
+  <action name="actionSet_Symbol">
+   <property name="icon">
+    <iconset resource="handybox.qrc">
+     <normaloff>:/images/resources/icons/newfont.png</normaloff>:/images/resources/icons/newfont.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Symbol</string>
+   </property>
+  </action>
+  <action name="actionNormalize_Slant">
+   <property name="text">
+    <string>Normalize Slant</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="handybox.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="images">
+    <file>resources/icons/folder_new.png</file>
+    <file>resources/icons/apply.png</file>
+    <file>resources/icons/fileopen.png</file>
+    <file>resources/icons/edit.png</file>
+    <file>resources/icons/wizard.png</file>
+    <file>resources/icons/newfont.png</file>
+    <file>resources/icons/edit_add.png</file>
+    <file>resources/icons/filenew.png</file>
+    <file>resources/icons/filesave.png</file>
+  </qresource>
+</RCC>
