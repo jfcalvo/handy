@@ -228,8 +228,7 @@ handy_float handy_allograph_distance_dtw(handy_allograph* a1, handy_allograph* a
     return distance;
 }
 
-inline handy_bool _dtw_continuity_condition(handy_allograph* a1, handy_allograph* a2, 
-                                            handy_uint i, handy_uint j, handy_float c) {
+handy_bool _dtw_continuity_condition(handy_allograph* a1, handy_allograph* a2, handy_uint i, handy_uint j, handy_float c) {
 
     handy_float condition1, condition2;
     handy_float first_operator, second_operator;
@@ -257,6 +256,9 @@ handy_float handy_point_distance(handy_point p1, handy_point p2, handy_distance 
         case HANDY_DISTANCE_EUCLIDEAN:
             return handy_point_distance_euclidean(p1, p2);
             break;
+        default:
+          return handy_point_distance_euclidean(p1, p2);
+          break;
     }
 }
 

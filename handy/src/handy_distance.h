@@ -49,7 +49,7 @@ handy_float handy_allograph_distance_dtw(handy_allograph* a1, handy_allograph* a
 
 // Allograph Distance Utils
 
-inline handy_bool _dtw_continuity_condition(handy_allograph* a1, handy_allograph* a2, handy_uint i, handy_uint j, handy_float c);
+handy_bool _dtw_continuity_condition(handy_allograph* a1, handy_allograph* a2, handy_uint i, handy_uint j, handy_float c);
 
 // Point Distance
 

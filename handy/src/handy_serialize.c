@@ -37,6 +37,9 @@ handy_allograph* handy_allograph_load(char* path, handy_serialize format) {
         case HANDY_SERIALIZE_BINARY:        
             return handy_allograph_load_binary(path);
             break;
+        default:
+            return handy_allograph_load_binary(path);
+            break;
     }
 }
 
@@ -169,6 +172,9 @@ handy_collection* handy_collection_load(char* path, handy_serialize format) {
             return handy_collection_load_uji2(path);
             break;        
         case HANDY_SERIALIZE_BINARY:
+            return handy_collection_load_binary(path);
+            break;
+        default:
             return handy_collection_load_binary(path);
             break;
     }

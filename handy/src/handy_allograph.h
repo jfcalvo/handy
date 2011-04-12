@@ -50,7 +50,17 @@ int              handy_allograph_set_symbol(handy_allograph* allograph, char* sy
 handy_point handy_allograph_get_center(handy_allograph* allograph);
 handy_point handy_allograph_get_smallest(handy_allograph* allograph);
 handy_point handy_allograph_get_biggest(handy_allograph* allograph);
+  
+// Point Utils
 
+static inline handy_point handy_make_point(handy_float x, handy_float y) {
+  return (handy_point) {x, y, 0.0f};
+}
+
+static inline handy_point handy_make_point_with_pressure(handy_float x, handy_float y, handy_float z) {
+  return (handy_point) {x, y, z};
+}
+  
 #ifdef __cplusplus
 }
 #endif
