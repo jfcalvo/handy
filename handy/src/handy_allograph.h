@@ -30,11 +30,20 @@ extern "C" {
 #include "handy_consts.h"
 
 typedef struct {
-	handy_float x, y, z; // Normaly z is used to save pen pressure level
+  handy_float x, y, z; // Normaly z is used to save pen pressure level
 } handy_point;
+  
+typedef struct {
+  handy_float width, height;
+} handy_size;
+  
+typedef struct {
+  handy_point origin;
+  handy_size  size;
+} handy_rect;
 
 typedef struct {
-    handy_symbol symbol;     // Symbol that represents the allograph
+  handy_symbol symbol;     // Symbol that represents the allograph
 	handy_uint   num_points; // Number of points in the allograph
 	handy_point* points;     // Array with all the points of the allograph
 } handy_allograph;
@@ -50,6 +59,7 @@ int              handy_allograph_set_symbol(handy_allograph* allograph, char* sy
 handy_point handy_allograph_get_center(handy_allograph* allograph);
 handy_point handy_allograph_get_smallest(handy_allograph* allograph);
 handy_point handy_allograph_get_biggest(handy_allograph* allograph);
+handy_uint  handy_allograph_points_contained(handy_allograph* allograph, handy_rect rect);
   
 // Point Utils
 
@@ -59,6 +69,18 @@ static inline handy_point handy_make_point(handy_float x, handy_float y) {
 
 static inline handy_point handy_make_point_with_pressure(handy_float x, handy_float y, handy_float z) {
   return (handy_point) {x, y, z};
+}
+  
+// Size Utils
+
+static inline handy_size handy_make_size(handy_float width, handy_float height) {
+  return (handy_size) {width, height};
+}
+  
+// Rect Utils
+  
+static inline handy_rect handy_make_rect(handy_point origin, handy_size size) {
+  return (handy_rect) {origin, size};
 }
   
 #ifdef __cplusplus

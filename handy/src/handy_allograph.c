@@ -28,6 +28,7 @@
 
 #include "logging.h"
 
+
 handy_allograph* handy_allograph_new() {
 	
 	handy_allograph* allograph = (handy_allograph*) malloc(sizeof(handy_allograph));
@@ -127,6 +128,33 @@ int handy_allograph_set_symbol(handy_allograph* allograph, char* symbol) {
             return HANDY_SUCCESS_CODE;
         }
     }
+}
+
+/* 
+ * Returns for an allograph the numbers of points (always >= 0) 
+ * that are contained inside a rect
+ */
+handy_uint  handy_allograph_points_contained(handy_allograph* allograph, handy_rect rect) {
+  
+  handy_point point;
+  handy_uint  points_contained = 0;
+  handy_float maximum_x, maximum_y;
+  
+  maximum_x = rect.origin.x + rect.size.width;
+  maximum_y = rect.origin.y + rect.size.height;
+  
+  unsigned int i;
+  for (i = 0; i < allograph->num_points; i++) {
+    point.x = allograph->points[i].x;
+    if (point.x >= rect.origin.x && point.x <= maximum_x) {
+      point.y = allograph->points[i].y;
+      if (point.y >= rect.origin.y && point.y <= maximum_y) {
+        points_contained++;
+      }
+    }
+  }
+  
+  return points_contained;
 }
 
 /*
